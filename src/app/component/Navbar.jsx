@@ -7,7 +7,7 @@ const Navbar = () => {
   console.log(pathname.includes("dashboard"));
   if (!pathname.includes("dashboard")) {
     return (
-      <div className="flex justify-center items center">
+      <div className="flex justify-center items-center">
         <ul className="flex justify-between w-1/2">
           <l1>
             <Link href={"/"}>Home</Link>
