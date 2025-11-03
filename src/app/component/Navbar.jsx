@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link href={"/products"}>
             <l1>Products</l1>
           </Link>
-          <l1>About</l1>
+          {/* <l1>About</l1> */}
         </ul>
       </div>
     );

@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import React from "react";
 
+export const dynamic = "force-dynamic";
 export default async function ProductsPage() {
   const res = await fetch(`http://localhost:3000/api/items`, {
-    cache: "force-cache",
+    // cache: "force-cache",
   });
   const data = await res.json();
 
