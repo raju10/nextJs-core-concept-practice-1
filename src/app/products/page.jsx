@@ -1,23 +1,21 @@
+import dbConnect from "@/lib/dbConnect";
 import { redirect } from "next/navigation";
 import React from "react";
+import { getProducts } from "../actions/products/getProducts";
 
 //export const dynamic = "force-dynamic";
 export default async function ProductsPage() {
-  const NEXT_PUBLIC_SERVER_ADDRESS = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
-  console.log("Fetching:", NEXT_PUBLIC_SERVER_ADDRESS);
+  // const NEXT_PUBLIC_SERVER_ADDRESS = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
+  // console.log("Fetching:", NEXT_PUBLIC_SERVER_ADDRESS);
 
-  const res = await fetch(`${NEXT_PUBLIC_SERVER_ADDRESS}/api/items`);
-
-  // if (!res.ok) {
-  //   const text = await res.text();
-  //   console.error("Failed to fetch products:", text);
-  //   return <p>Failed to load products.</p>;
-  // }
-  const data = await res.json();
-  // cache: "force-cache",
-  console.log("Response status:", res.status);
+  // const res = await fetch(`${NEXT_PUBLIC_SERVER_ADDRESS}/api/items`);
   // const data = await res.json();
-
+  // cache: "force-cache",
+  // console.log("Response status:", res.status);
+  /////////////////////////
+  // its diractly db to query
+  //const data = await dbConnect("postTest").find({}).toArray();
+  const data = await getProducts();
   //HERE WE REDERACT THIS
   // if (data.length > 5) {
   //   redirect("/");
