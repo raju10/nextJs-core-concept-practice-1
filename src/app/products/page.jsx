@@ -4,10 +4,11 @@ import React from "react";
 export const dynamic = "force-dynamic";
 export default async function ProductsPage() {
   const { NEXT_PUBLIC_SERVER_ADDRESS } = process.env;
-  const res = await fetch(`${NEXT_PUBLIC_SERVER_ADDRESS}/api/items`, {
-    // cache: "force-cache",
-  });
+  console.log("Fetching:", NEXT_PUBLIC_SERVER_ADDRESS);
 
+  const res = await fetch(`${NEXT_PUBLIC_SERVER_ADDRESS}/api/items`);
+  // cache: "force-cache",
+  console.log("Response status:", res.status);
   const data = await res.json();
 
   //HERE WE REDERACT THIS

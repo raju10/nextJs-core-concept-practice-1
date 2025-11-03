@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 
 export default function ProductAddForm() {
-  const { NEXT_PUBLIC_SERVER_ADDRESS } = process.env;
+  const NEXT_PUBLIC_SERVER_ADDRESS = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
   console.log(NEXT_PUBLIC_SERVER_ADDRESS);
   const router = useRouter();
   const handleSubmit = async (e) => {
