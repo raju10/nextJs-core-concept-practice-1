@@ -1,10 +1,10 @@
 "use server";
 
-import dbConnect from "@/lib/dbConnect";
+import dbConnect, { collectionNames } from "@/lib/dbConnect";
 
 export const getProducts = async () => {
   try {
-    const data = await dbConnect("postTest").find({}).toArray();
+    const data = await dbConnect(collectionNames.POST_TEST).find({}).toArray();
     return data;
   } catch (error) {
     console.log("getProduct page error===>", error);

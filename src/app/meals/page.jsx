@@ -47,7 +47,7 @@ export default async function MealsPage({ searchParams }) {
                 className={`border rounded p-2 space-y-3 `}
               >
                 <Image
-                  src={meal.strMealThumb}
+                  src={meal?.strMealThumb || ""}
                   alt={meal.strMeal}
                   width={150}
                   height={150}

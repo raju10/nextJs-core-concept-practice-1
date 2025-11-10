@@ -9,22 +9,25 @@ const Navbar = () => {
     return (
       <div className="flex justify-center items-center">
         <ul className="flex justify-between w-1/2">
-          <l1>
+          <li>
             <Link href={"/"}>Home</Link>
-          </l1>
-          <l1>
+          </li>
+          <li>
             <Link href={"/posts"}>Posts</Link>
-          </l1>
-          <l1>
+          </li>
+          <li>
             <Link href={"/meals"}>Meals</Link>
-          </l1>
+          </li>
 
-          <l1>
+          <li>
             <Link href={"/products/add"}>Add Products</Link>
-          </l1>
-          <l1>
+          </li>
+          <li>
             <Link href={"/products"}>Products</Link>
-          </l1>
+          </li>
+          <li>
+            <Link href={"/register"}>Register</Link>
+          </li>
           {/* <l1>About</l1> */}
         </ul>
       </div>

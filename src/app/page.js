@@ -1,6 +1,12 @@
 import Image from "next/image";
+import LoginButton from "../components/LoginButton.jsx";
+import UserInfo from "@/components/UserInfo.jsx";
+import { getServerSession } from "next-auth";
+import { authOption } from "@/lib/authOptions.js";
+import LogoutButton from "@/components/LogoutButton.jsx";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOption);
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -58,6 +64,20 @@ export default function Home() {
           >
             Documentation
           </a>
+          <div>
+            {session?.user ? <LogoutButton /> : <LoginButton />}
+            {/* <LoginButton></LoginButton> */}
+            <br />
+
+            <b>From client component : </b>
+            <br />
+
+            <UserInfo></UserInfo>
+            <br />
+            <b>From server component : </b>
+            <br />
+            <p> {JSON.stringify(session)}</p>
+          </div>
         </div>
       </main>
     </div>
